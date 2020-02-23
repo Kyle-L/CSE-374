@@ -69,7 +69,7 @@ public class Solution {
 	 * Let A be the set of all ugly numbers of a.
 	 * Let B be the set of all ugly numbers of b. 
 	 * Let C be the set of all ugly numbers of c.
-	 * This returns the |A n B n C| less than or equal to n.
+	 * This returns the |A u B u C| less than or equal to n.
 	 * Equation derived from https://www.probabilitycourse.com/chapter1/1_2_2_set_operations.php.
 	 */
 	private long findNumberInUnionSet (long n, long a, long b, long c) {
