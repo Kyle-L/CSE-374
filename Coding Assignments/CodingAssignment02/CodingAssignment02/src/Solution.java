@@ -20,44 +20,49 @@ public class Solution {
 	 * of a, b, or c.
 	 * @return The ugly number at n.
 	 */
-	public long nthUglyNumber (long n, long a, long b, long c) {
+	public long nthUglyNumber (int n, int a, int b, int c) {
 		/* If a, b, or c is equal to 1.
 		 * then all Integers are an ugly number. */
 		if (a == 1 || b == 1 || c == 1) {
 			return n;
 		}
 		
-		// The left and right of the binary search.
-		int l = 0;
-		int r = Integer.MAX_VALUE;
+		// Represents the lowest possible value that could be at index n.
+		int low = Math.min(a, Math.min(b, c));
 		
+		// Represents the highest possible value that could be at index n.
+		int high = Integer.MAX_VALUE;
 		
-		int uglyNumber = 0;
+		/* Represents the middle value of low and high. Is calculated in 
+		 * the binary search. */
+		int mid = 0;
 		
 		/* Uses a binary search to find the nth ugly number. */
-		while (l <= r) {
-			// Finds the mid of the left and right side.
-			int mid = l + (r - l)/2;
+		while (low < high) {
+			// Finds the mid of the low and high.
+			mid = low + (high - low)/2;
 			
-			// Finds number of numbers that are ugly numbers of a, b, or c at n.
+			/* Finds number of numbers that are ugly numbers of a, b, or c
+			 * that are less than mid. */
 			long numberInUnion = findNumberInUnionSet(mid, a, b, c);
 			
-			/* If n is less than or equal to the numberUnion.
-			 * then ugly number of n is less than the mid or equal to it.*/
-			if (numberInUnion >= n) {
-				uglyNumber = mid;
-				
-				/* Sets the right index equal to the mid - 1.
-				 * 1 is subtracted since the mid has already been checked.*/
-				r = mid - 1;
+			/* If numberUnion is less than  n then ugly number of n is less 
+			 * than the mid*/
+			if (numberInUnion < n) {
+				/* Sets low equal to the mid + 1.
+				 * 1 is added since high includes the mid.*/
+				low = mid + 1;
+			/* If numberUnion is greater than  n then ugly number of n is greater 
+			 * than the mid or equal to it.*/
 			} else {
-				/* Sets the left index equal to the mid + 1.
-				 * 1 is added since the mid has already been checked.*/
-				l = mid + 1;
+				high = mid;
 			}
 		}
 		
-		return uglyNumber;
+		/* Once low < high, the binary search has only has one value that remains
+		 * which is the number at the nth index. At this point it doesn't matter
+		 * if low or high is returned as they should be the same value. */
+		return low;
 		
 	}
 	
@@ -88,13 +93,15 @@ public class Solution {
 		// Finds the number of numbers that are divisible by the sum of a, b, and c.
 		long result = n/a + n/b + n/c;
 		
-		/* Removes all numbers that divisible by a and b, a and c, b and c, and adds back the
-		 * the numbers that are divisible by a, b, and c. */
+		/* Removes all numbers that divisible by a and b, a and c, b and c, and then adds 
+		 * back the numbers that are divisible by a, b, and c. */
 		return result - n/abLCM - n/acLCM - n/bcLCM + n/abcLCM;
 	}
 	
 	/**
-	 * Finds the least common multiple using the greatest common factor.
+	 * Finds the least common multiple.
+	 * Note: The product is divided by the greatest common factor
+	 * 		 to avoid situations where a and b share a common factor. 
 	 */
 	private long findLCM (long a, long b) {
 		return (a * b)/findGCF(a, b);
