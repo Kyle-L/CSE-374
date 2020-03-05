@@ -6,7 +6,7 @@ public class main {
 		System.out.println("<== Tests QuickSort on a Integer array ==>");
 		
 		// Creates a integer array of random order.
-		Integer[] integers = {1, 5, 2, 6, 7, 0, 3};
+		Integer[] integers = {11, 4, 20, 45, 32, 60, 98, 70};
 		
 		// Output the unsorted array.
 		System.out.println("The unsorted array: " + Arrays.toString(integers));

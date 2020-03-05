@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * An implementation of QuickSort following the algorithm provided in
  * "Introduction to Algorithms" by Thomas Cormen. 
