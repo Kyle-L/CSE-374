@@ -25,6 +25,9 @@ import java.util.*;
  * 			15.			Add everything in V1 to V.
  * 			16.	Return F
  * 
+ * Graphic of Sample Input: https://raw.githubusercontent.com/Kyle-L/CSE-374/master/Coding%20Assignments/
+ * 							CodingAssignment04/Graphic.png?token=AIZX5GTHY5LGFPR2SYEHW226UBLYC
+ * 
  */
 class Solution {
 	
@@ -68,7 +71,7 @@ class Solution {
         startTransformPath.add(beginWord);
         queue.add(startTransformPath);
 
-        // Whether all paths at a particular depth have been found.
+        // Whether a path at the shortest depth has been found.
         boolean shortestPathsFound = false;
         
         /* Continue polling paths from the queue until the queue is empty
