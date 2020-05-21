@@ -6,7 +6,7 @@
 
 <a name="overview"/></a>
 ## Overview
-This is the repository for the development of coding assignments for ![CSE 374 Algorithms I](https://miamioh.edu/cec/academics/departments/cse/academics/course-descriptions/cse-374/index.html).
+This is the repository for the development of coding assignments for ![CSE 374 Algorithms I](https://miamioh.edu/cec/academics/departments/cse/academics/course-descriptions/cse-374/index.html) at ![Miami University](https://www.miami.miamioh.edu/).
 
 <a name="assignments"/></a>
 ## Coding Assignments
