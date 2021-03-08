@@ -6,7 +6,7 @@
 
 <a name="overview"/></a>
 ## Overview
-This is the repository for the development of coding assignments for [CSE 374 Algorithms I](https://miamioh.edu/cec/academics/departments/cse/academics/course-descriptions/cse-374/index.html) at [Miami University](https://www.miami.miamioh.edu/). All coding assignments are written for Java 8.
+This is the repository for the development of coding assignments and projects for [CSE 374 Algorithms I](https://miamioh.edu/cec/academics/departments/cse/academics/course-descriptions/cse-374/index.html) at [Miami University](https://www.miami.miamioh.edu/). All coding assignments are written for Java 8.
 
 <a name="assignments"/></a>
 ## Coding Assignments
